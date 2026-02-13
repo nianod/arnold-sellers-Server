@@ -9,11 +9,11 @@ import cors from 'cors'
 import authroutes from './Routes/authroutes.js'
 import userRoutes from './Routes/userRoutes.js'
 
-const app = express()
-app.use(cors({
-    origin: '*',
-    credentials: false
-}))
+    const app = express()
+    app.use(cors({
+        origin: 'https://arnold-sellers-blond.vercel.app',
+        credentials: true
+    }))
 
 
 
