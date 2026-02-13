@@ -1,13 +1,16 @@
-// import dotenv from 'dotenv';
-// dotenv.config() 
-// import express from 'express'
-// import mongoose from 'mongoose';
- 
-// import productRoute from './Routes/productRoute.js'
-// import Product from './Models/Product.models.js'
-// import cors from 'cors'
-// import authroutes from './Routes/authroutes.js'
-// import userRoutes from './Routes/userRoutes.js'
+
+
+import dotenv from 'dotenv';
+dotenv.config() 
+import express from 'express'
+import mongoose from 'mongoose';
+import cors from 'cors' 
+
+import productRoute from './Routes/productRoute.js'
+import Product from './Models/Product.models.js'
+
+import authroutes from './Routes/authroutes.js'
+import userRoutes from './Routes/userRoutes.js'
 
 //     const app = express()
 //     app.use(cors({
@@ -24,8 +27,8 @@
 // app.use('/api/products', productRoute)
 // app.use('/api/user', userRoutes)
 
-// const PORT = process.env.PORT || 7000
-// const MONGO = process.env.MONGO_URL
+const PORT = process.env.PORT || 7000
+const MONGO = process.env.MONGO_URL
 
 // app.post('/api/products', async (request, response) => {
 //     try {
@@ -98,7 +101,11 @@
 const app = express()
 
  
-app.use(cors({ origin: 'https://arnold-sellers-blond.vercel.app', credentials: true }))
+app.use(cors({
+   origin: 'https://arnold-sellers-blond.vercel.app', 
+   credentials: true
+}))
+
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
  
