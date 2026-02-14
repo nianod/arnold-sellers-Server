@@ -13,10 +13,10 @@ import authroutes from './Routes/authroutes.js'
 import userRoutes from './Routes/userRoutes.js'
 
     const app = express()
-    app.use(cors({
-        origin: '*',
-        credentials: false
-    }))
+app.use(cors({
+    origin: ['http://localhost:5173', 'https://arnold-sellers-blond.vercel.app'],
+    credentials: true
+}))
 
 
 
@@ -82,47 +82,33 @@ app.put('/api/product/:id', async(request, response) => {
     }
  })
 
-
 mongoose.connect(MONGO, {
     dbName: "ecommerce-db",
 })
 .then(() => {
-    app.listen(PORT, () => {
-        console.log(`App running on port ${PORT}`)
-    })
-    app.get('/', (request, response) => {
-        response.send('Hello From NODE API')
-    })
-}).catch((error) => {
-    console.log('Database connection failed', error.message)
+    console.log('MongoDB Connected')
+})
+.catch((error) => {
+    console.log('MongoDB failed - starting without DB:', error.message)
+})
+
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`)
 })
 
 
-// const app = express()
-
- 
-// app.use(cors({
-//    origin: 'https://arnold-sellers-blond.vercel.app', 
-//    credentials: true
-// }))
-
-// app.use(express.json())
-// app.use(express.urlencoded({ extended: false }))
- 
-// app.get('/', (req, res) => {
-//   res.send('Hello From NODE API')
-// })
- 
-// app.use('/api/auth', authroutes)    
-// app.use('/api/products', productRoute)
-// app.use('/api/user', userRoutes)
-
- 
-
 // mongoose.connect(MONGO, {
-//   dbName: "ecommerce-db",
-// }).then(() => {
-//   app.listen(PORT, () => {
-//     console.log(`App running on port ${PORT}`)
-//   })
+//     dbName: "ecommerce-db",
 // })
+// .then(() => {
+//     app.listen(PORT, () => {
+//         console.log(`App running on port ${PORT}`)
+//     })
+//     app.get('/', (request, response) => {
+//         response.send('Hello From NODE API')
+//     })
+// }).catch((error) => {
+//     console.log('Database connection failed', error.message)
+// })
+
+ 
