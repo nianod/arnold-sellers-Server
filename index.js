@@ -1,5 +1,3 @@
-
-
 import dotenv from 'dotenv';
 dotenv.config() 
 import express from 'express'
@@ -12,14 +10,13 @@ import Product from './Models/Product.models.js'
 import authroutes from './Routes/authroutes.js'
 import userRoutes from './Routes/userRoutes.js'
 
-    const app = express()
-app.use(cors({
+ const app = express()
+ app.use(cors({
     origin: ['http://localhost:5173', 'https://arnold-sellers-blond.vercel.app'],
     credentials: true
 }))
 
-
-
+ 
 app.use(express.json()) //Middleware
 app.use(express.urlencoded({extended: false }))
 
@@ -96,19 +93,5 @@ app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`)
 })
 
-
-// mongoose.connect(MONGO, {
-//     dbName: "ecommerce-db",
-// })
-// .then(() => {
-//     app.listen(PORT, () => {
-//         console.log(`App running on port ${PORT}`)
-//     })
-//     app.get('/', (request, response) => {
-//         response.send('Hello From NODE API')
-//     })
-// }).catch((error) => {
-//     console.log('Database connection failed', error.message)
-// })
 
  
