@@ -171,15 +171,16 @@ If you didn't request this code, please ignore this email.
     
      
     if (error.code === 'EAUTH') {
-      console.error('Authentication failed. Check your EMAIL_USER and EMAIL_PASS in .env');
+      //console.error('Authentication failed');
     } else if (error.code === 'ESOCKET') {
-      console.error('Network error. Check your internet connection and EMAIL_HOST/PORT');
+      //console.error('Network error. Check your internet connection');
     }
     
-    throw new Error('Failed to send OTP email');
+    throw new Error('Please try after some minutes');
   }
 };
 
+//testin
  export const testEmailConfig = async () => {
   try {
     const transporter = createTransporter();
