@@ -5,6 +5,7 @@ go 1.24.0
 toolchain go1.24.13
 
 require (
+	github.com/joho/godotenv v1.5.1
 	go.mongodb.org/mongo-driver v1.17.9
 	golang.org/x/crypto v0.48.0
 )
