@@ -17,14 +17,13 @@ const createTransporter = () => {
   });
 }
 
- 
 // Send OTP email
 export const sendOTPEmail = async (email, otp) => {
   try {
     const transporter = createTransporter();
 
     const mailOptions = {
-      from: `"Your E-Commerce App" <${sender}>`,
+      from: `<${sender}>`,
       to: email,
       subject: 'Your OTP Verification Code',
       html: `
