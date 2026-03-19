@@ -9,6 +9,7 @@ import Product from './Models/Product.models.js'
 
 import authroutes from './Routes/authroutes.js'
 import userRoutes from './Routes/userRoutes.js'
+import usersRoute from './Routes/usersRoute.js'
 
  const app = express()
  app.use(cors({
@@ -18,14 +19,21 @@ import userRoutes from './Routes/userRoutes.js'
 
  
 app.use(express.json()) //Middleware
-app.use(express.urlencoded({extended: false }))
+app.use(express.urlencoded({
+    extended: false
+}))
 
 app.use('/api/auth', authroutes)
 app.use('/api/products', productRoute)
 app.use('/api/user', userRoutes)
+app.use('/api/users', usersRoute)
 
 const PORT = process.env.PORT || 7000
 const MONGO = process.env.MONGO_URL
+
+app.get('/', (request, response) => {
+    response.send('Hello from NOde API')
+})
 
 app.post('/api/products', async (request, response) => {
     try {
