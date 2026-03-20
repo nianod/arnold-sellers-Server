@@ -8,7 +8,7 @@ export const verifyToken = (req, res, next) => {
 
   const token = authHeader.split(' ')[1];
   try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY);
+    const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY, { expiresIn: process.env.JWT_EXPIRY});
     req.user = { id: decoded.id };
     next();
   } catch (error) {
