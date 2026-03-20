@@ -7,3 +7,4 @@ const router = express.Router()
 router.get('/users', verifyToken, getAllUsers)
 
 export default router
+ 
