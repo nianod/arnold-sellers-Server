@@ -179,17 +179,5 @@ If you didn't request this code, please ignore this email.
   }
 };
 
-//testin
- export const testEmailConfig = async () => {
-  try {
-    const transporter = createTransporter();
-    await transporter.verify();
-    console.log(' Email configuration is valid');
-    return true;
-  } catch (error) {
-    console.error(' Email configuration error:', error);
-    return false;
-  }
-};
  
  
