@@ -20,7 +20,7 @@ const createTransporter = () => {
 // Send OTP email
 export const sendOTPEmail = async (email, otp) => {
   try {
-    const transporter = createTransporter();
+    const transporter = createTransporter()
 
     const mailOptions = {
       from: `<${sender}>`,
@@ -153,21 +153,20 @@ export const sendOTPEmail = async (email, otp) => {
       `,
       text: `Your OTP verification code is: ${otp}
       
-This code will expire in 5 minutes.
+      This code will expire in 5 minutes.
 
-If you didn't request this code, please ignore this email.
+      If you didn't request this code, please ignore this email.
 
-- Your E-Commerce App Team`, 
-    };
+      - Your E-Commerce App Team`, 
+    }
 
-    const info = await transporter.sendMail(mailOptions);
+    const info = await transporter.sendMail(mailOptions)
  
     
-    return { success: true, messageId: info.messageId };
+    return { success: true, messageId: info.messageId }
     
   } catch (error) {
-    console.error(' Error sending email:', error);
-    
+    console.error(' Error sending email:', error)    
      
     if (error.code === 'EAUTH') {
       //console.error('Authentication failed');
