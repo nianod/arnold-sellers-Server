@@ -112,6 +112,12 @@ export const sendOTPEmail = async (email, otp) => {
           </style>
         </head>
         <body>
+   <div style="display:none; max-height:0; overflow:hidden; mso-hide:all;">
+    Arnold Sellers OTP code is ready
+  </div>
+   <div style="display:none; max-height:0; overflow:hidden; mso-hide:all;">
+    &nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;
+  </div>
           <div class="container">
             <div class="header">
               <h1>Verification Code</h1>
