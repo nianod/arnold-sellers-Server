@@ -127,7 +127,7 @@ export const sendOTPEmail = async (email, otp) => {
               <p style="font-size: 16px; margin-bottom: 20px;">Hello,</p>
               
               <p style="font-size: 16px;">
-                Thank you for signing up! To complete your verification, please use the following One-Time Password (OTP):
+                Thank you for signing up to Arnold Sellers! To complete your verification, please use the following One-Time Password (OTP):
               </p>
               
               <div class="otp-box">
